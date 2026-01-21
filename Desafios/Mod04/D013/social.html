@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social</title>
+  <link rel="stylesheet" href="sytles/social.css">
+</head>
+<body>
+  <img id="img-rede" src="imagens/tela-youtube.png" alt="YouTube">
+  <a id="link-rede" href="https://www.youtube.com/" target="_blank"> ACESSE</a>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const rede = urlParams.get('rede');
+    const redesSociais = {
+      youtube: {
+        imagem: 'imagens/youtube-tela.png',
+        link: 'https://www.youtube.com/',
+        alt: 'YouTube'
+      },
+      github: {
+        imagem: 'imagens/github-tela.png',
+        link: 'https://www.github.com/',
+        alt: 'GitHub'
+      },
+      instagram: {
+        imagem: 'imagens/instagram-tela.png',
+        link: 'https://www.instagram.com/',
+        alt: 'Instagram'
+      },
+      twitter: {
+        imagem: 'imagens/tela-twitter.jpg',
+        link: 'https://www.twitter.com/',
+        alt: 'Twitter'
+      },
+      facebook: {
+        imagem: 'imagens/tela-facebook.jpg',
+        link: 'https://www.facebook.com/',
+        alt: 'Facebook'
+      }
+    };
+    if (rede && redesSociais[rede]) {
+      const imgElement = document.getElementById('img-rede');
+      const linkElement = document.getElementById('link-rede');
+
+      imgElement.src = redesSociais[rede].imagem;
+      imgElement.alt = redesSociais[rede].alt;
+      linkElement.href = redesSociais[rede].link;
+    }
+  </script>
+</body>
+</html>
